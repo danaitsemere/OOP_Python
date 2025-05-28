@@ -80,7 +80,7 @@ class Account:
         self.owner = new_owner
         return f"Account owner changed to {self.owner}"
 
-    def show_bank_statement(self):
+    def bank_statement(self):
         print("Transaction Statement:")
         count = 1
         for deposit in self.deposits:
@@ -92,7 +92,7 @@ class Account:
             count += 1
         print(f"Loan Balance: ${self.loan_balance:.2f}")
 
-    def apply_interest(self):
+    def interest(self):
         alert = self.account_status()
         if alert:
             return alert
@@ -111,7 +111,7 @@ class Account:
         self.is_frozen = False
         return "Account has been unfrozen."
 
-    def set_minimum_balance(self, amount):
+    def minimum_balance(self, amount):
         if amount >= 0:
             self.minimum_balance = amount
             return f"Minimum balance set to ${amount:.2f}"
