@@ -1,4 +1,4 @@
-class BankAccount:
+class Account:
     def __init__(self, owner, minimum_balance=0):
         self.owner = owner
         self.deposits = []
@@ -10,9 +10,9 @@ class BankAccount:
 
     def account_status(self):
         if self.closed:
-            return "Error: Account is closed."
+            return "Alert: Account is closed."
         if self.is_frozen:
-            return "Error: Account is frozen."
+            return "Alert: Account is frozen."
         return None
 
     def deposit(self, amount):
@@ -80,7 +80,7 @@ class BankAccount:
         self.owner = new_owner
         return f"Account owner changed to {self.owner}"
 
-    def show_account_summary(self):
+    def show_bank_statement(self):
         print("Transaction Statement:")
         count = 1
         for deposit in self.deposits:
